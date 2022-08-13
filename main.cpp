@@ -10,8 +10,13 @@ int main()
     int sum=0;
     cout<<"v1: {";
     for_each(begin(v1),end(v1),[&sum](const auto& x){cout<<x<<" ";sum +=x;});
-    cout<<"}";
+    cout<<"}"<<endl;
     cout<<"sum of vector elements:"<<sum<<endl;
     cout<<endl;
+    // sort elements in descending order
+    sort(v1.begin(),v1.end(),greater<int>());
+    cout<<"v1: {";
+    for_each(begin(v1),end(v1),[](const auto& x){cout<<x<<" ";});
+    cout<<"}"<<endl;
     return 0;
 }
